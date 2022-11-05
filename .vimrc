@@ -60,11 +60,26 @@ set number
 set relativenumber
 set clipboard=unnamedplus
 set ignorecase
+set smartcase
 set incsearch
 set autoindent
 
+" Always show the status line at the bottom, even if you only have one window open.
+set laststatus=2
 
 " imap jk <Esc>
+
+" Unbind some useless/annoying default key bindings.
+nmap Q <Nop> " 'Q' in normal mode enters Ex mode. You almost never want this.
+
+" The backspace key has slightly unintuitive behavior by default. For example,
+" by default, you can't backspace before the insertion point set with 'i'.
+" This configuration makes backspace behave more reasonably, in that you can
+" backspace over anything.
+set backspace=indent,eol,start
+
+" Disable audible bell because it's annoying.
+set noerrorbells visualbell t_vb=
 
 
 set tabstop=4
